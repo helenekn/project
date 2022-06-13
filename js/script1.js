@@ -1,24 +1,29 @@
 "use strict";
 
+function sayHello(name) {
+  return `Hello ${name}`;
+}
 
-const category = 'toys';
-console.log(`https://someurl.com/${category}/5`);
+console.log(sayHello('Helene'));
 
-const user = 'Ivan';
-alert(`Hello ${user}`);
+function returnNeighboringNumbers(num) {
+  return [--num, ++num, ++num];
+}
+console.log(returnNeighboringNumbers(5));
 
-let incr = 10,
-    decr = 10;
-
-++incr;
---decr;
-
-console.log(incr);
-console.log(decr);
-
-const isChecked = true,
-    isClose = false;
-      
-console.log(isChecked || isClose);
-
-
+function getMathResult(num1, num2) {
+  if (typeof num2 != 'number' || num2 <= 0) {
+    return num1;
+  }
+  else {
+    let result = +num1;
+    let x = num1;
+    for (let i = 1; i < num2; i++) {
+      result += '--';
+      x += num1;
+      result += +x;
+    }
+    return result;
+  }
+  }
+console.log(getMathResult(3, 1));
