@@ -36,7 +36,7 @@ detectPersonalLevel();
 
 function rememberMyFilms() {
   for (let i = 0; i < 2; i++) {
-    let a = prompt("Один из последних просмотренных фильмов", ""),
+    let a = prompt("Один из последних просмотренных фильмов", "").trim(),
       b = prompt("На сколько оцените его", "");
 
     if (a != null && b != null && a != "" && b != "" && a.length < 50) {
@@ -59,11 +59,9 @@ showMyDB(personalMovieDB.privat);
 
 function writeYourGenres() {
   for (let i = 1; i <= 3; i++) {
-        personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
+    personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
   }
 }
 writeYourGenres();
 
 console.log(personalMovieDB);
-
-
